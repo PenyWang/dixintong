@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>登录</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/login.css">
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/resize.js"></script>
+<script type="text/javascript">
+function getCookie(name) {
+    var arr,reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)"); //匹配字段
+    if (arr = document.cookie.match(reg)) {
+        return unescape(arr[2]);
+    } else {
+        return null;
+    }
+};
+var url = getCookie('url-new');
+if(url) window.location.href = url;
+
+</script>
+</head>
+
+<body>
+    <img src="images/logo.png" class="logo">
+    <div class="input-block">
+        <input type="text" id="phone" placeholder="手机号">
+    </div>
+    <div class="input-block">
+        <input type="text" id="code" placeholder="验证码">
+        <div class='valid-btn'>发送验证码</div>
+    </div>
+    <div class="login-btn">登录</div>
+</body>
+<script type="text/javascript">
+    var count = 60;
+    // var domain = 'http://localhost:3000';
+    var domain = 'http://182.92.125.163:3000';
+    // var domain = 'http://182.92.125.163:9000';
+    function countDown() {
+        if(count == 0) {
+            $(".valid-btn").html("发送验证码");
+            $(".valid-btn").removeClass("disabled");
+            count = 60;
+            return;
+        }
+
+        $(".valid-btn").html("重新发送" + count--);
+        setTimeout(function (){
+            countDown();
+        }, 1000);
+    }
+    function checkPhone(){
+        var phone = $('#phone').val();
+        var pattern = /^1[0-9]{10}$/;
+
+        if(phone == '') {
+            alert('请输入手机号码');
+            return false;
+        }
+        if(!pattern.test(phone)){
+            alert('请输入正确的手机号码');
+            return false;
+        }
+        return true;
+    }
+    $(".valid-btn").on("click", function () {
+        if($(this).hasClass("disabled")) return;
+
+        if(!checkPhone()) return;
+        $(this).addClass("disabled");
+        countDown();
+        $.get(domain + '/sendCode?phone='+$("#phone").val(), function(res) {})
+    })
+    function checkCode(){
+        var code = $('#code').val();
+        var pattern = /[0-9]{6}$/;
+
+        if(code == '') {
+            alert('请输入验证码');
+            return false;
+        }
+        if(!pattern.test(code)){
+            alert('请输入正确的验证码');
+            return false;
+        }
+        return true;
+    }
+    $(".login-btn").on("click", function() {
+        if(!checkPhone()) return;
+        if(!checkCode()) return;
+// setCookie('url', 'http://tq.jfshou.cn/seller/sellCard?agentId=726');
+        $.get(domain + "/login?phone="+$("#phone").val()+"&code="+$("#code").val(), function (res){
+            if(res.success) {
+                var url = 'index.html?phone='+$("#phone").val() + '&type='+res.type+'&date='+res.date;
+                setCookie('url-new', url);
+                window.location.href = url
+                // window.location.href = res.msg;
+            }else {
+                alert(res.msg);
+            }
+        })
+
+    })
+    function setCookie (name, value) {
+        if (value) {
+            var days = 30; //定义一天
+            var exp = new Date();
+            exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString;
+        }
+    };
+
+</script>
+</html>

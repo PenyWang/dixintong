@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>我的会员</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css?v=1.2">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/resize.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+        function getQueryValue(queryName) {
+            var query = decodeURI(window.location.search.substring(1));
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == queryName) { return pair[1]; }
+            }
+            return null;
+        }
+        var phone = getQueryValue('phone');
+        var type = getQueryValue('type');
+        var date = getQueryValue('date');
+
+        var types = ['福', '瑞', '吉', '祥'];
+        $(function () {
+            $(".member-info").addClass("card" + type);
+            $('.type').html(types[type]);
+            $('.date').html(date);
+        })
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?70648476f76fb152581c307184d462dc";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="bg"></div>
+        <div class="member-info">
+            <!-- <div class="member-name"><span class="type"></span>卡会员</div>
+            <div class="member-tip"><span class="type"></span>卡会员专属特权+附加权益</div> -->
+            <div class="member-date"><span class="date"></span>到期</div>
+        </div>
+    </div>
+    <div class="menu-block">
+        <div class="menu-title">
+            <h5>吃喝玩乐</h5>
+            <a class="menu-more"
+                href="https://www.eqifa.com/earner/mini/interest.htm?recommendId=591348&from=singlemessage&isappinstalled=0">查看更多
+                &gt; </a>
+        </div>
+        <div class="menu-list w">
+            <a class="menu-item"
+                href="https://www.eqifa.com/earner/mini/interest/branddetail.htm?recommendId=591348&brand_id=48&brandtype=2">
+                <img src="images/icon-kfc.png" class="icon-small">
+                <span class="menu-name">肯德基</span>
+            </a>
+            <a class="menu-item"
+                href="https://www.eqifa.com/earner/mini/interest/branddetail.htm?recommendId=591348&brand_id=41&brandtype=2">
+                <img src="images/icon-star.png" class="icon-small">
+                <span class="menu-name">星巴克</span>
+            </a>
+            <a class="menu-item"
+                href="https://www.eqifa.com/earner/mini/interest/branddetail.htm?recommendId=591348&brand_id=60&brandtype=2">
+                <img src="images/icon-elm.png" class="icon-small">
+                <span class="menu-name">饿了么</span>
+            </a>
+            <a class="menu-item"
+                href="https://www.eqifa.com/earner/mini/interest/branddetail.htm?recommendId=591348&brand_id=118&brandtype=2">
+                <img src="images/icon-kuaigou.png" class="icon-small">
+                <span class="menu-name">快狗打车</span>
+            </a>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="phone-recharge.html">
+                    <img src="images/phone-recharge-banner.png" class="swiper-img" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="cdf.html">
+                    <img src="images/cdf-banner.png" class="swiper-img" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="menu-block">
+        <div class="menu-title">
+            <h5>影音娱乐</h5>
+            <a href="https://www.eqifa.com/earner/mini/interest.htm?recommendId=591348&from=singlemessage&isappinstalled=0"
+                class="menu-more">查看更多 &gt; </a>
+        </div>
+        <div class="menu-list">
+            <a class="menu-item"
+                href="https://www.eqifa.com/earner/mini/interest/product.htm?recommendId=591348&brand_id=28">
+                <div class="circle">
+                    <img src="images/icon-tv.png" class="icon-circle">
+                </div>
+                <span class="menu-name">腾讯视频</span>
+                <span class="menu-tip">限时7折</span>
+            </a>
+            <a class="menu-item"
+                href="https://www.eqifa.com/earner/mini/interest/product.htm?recommendId=591348&brand_id=25">
+                <div class="circle">
+                    <img src="images/icon-qiy.png" class="icon-circle">
+                </div>
+                <span class="menu-name">爱奇艺</span>
+                <span class="menu-tip">最低6.1折</span>
+            </a>
+            <!-- <a class="menu-item" href="https://www.eqifa.com/earner/mini/interest/branddetail.htm?recommendId=591348&brand_id=39&brandtype=2">
+                <div class="circle">
+                    <img src="images/icon-mt.png" class="icon-circle">
+                </div>
+                <span class="menu-name">美团</span>
+                <span class="menu-tip">尊享9折</span>
+            </a>
+            <a class="menu-item" href="https://www.eqifa.com/earner/mini/interest/branddetail.htm?recommendId=591348&brand_id=35&brandtype=2">
+                <div class="circle">
+                    <img src="images/icon-di.png" class="icon-circle">
+                </div>
+                <span class="menu-name">滴滴</span>
+                <span class="menu-tip">速领打车券</span>
+            </a> -->
+            <a class="menu-item" href="https://a.dmall.com/act/Wi5kReZmH2zAVhwo.html?nopos=0&tpc=a_153741">
+                <div class="circle">
+                    <img src="images/duodian.png" class="icon-circle">
+                </div>
+                <span class="menu-name">多点</span>
+                <span class="menu-tip">限时优惠</span>
+            </a>
+            <a class="menu-item" href="https://songzhaopian.com/?channel=gzyldxt-sjk">
+                <div class="circle">
+                    <img src="images/yinge.JPG" class="icon-circle" style="width: .4rem;">
+                </div>
+                <span class="menu-name">免费领</span>
+                <span class="menu-tip">定制手机壳</span>
+            </a>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="menu-block w">
+        <div class="menu-title">
+            <h5>车主服务</h5>
+            <a href="#" class="menu-more" onclick="toService()">查看更多 &gt; </a>
+        </div>
+        <div class="menu-list">
+            <a class="menu-item" onclick="toWeizhang()">
+                <img src="images/menu-wei.png" class="icon-small">
+                <span class="menu-name">违章查询</span>
+            </a>
+            <!-- <a class="menu-item"
+                href="https://static.am.xiaojukeji.com/cf-terminal/oil/thanos-fe-oil/pages/home/index.html?am_channel=190001&openKey=outer">
+                <img src="images/menu-you.png" class="icon-small">
+                <span class="menu-name">加油</span>
+            </a> -->
+            <a class="menu-item"
+                href="https://open.chediandian.com/wash/ent-list/index?ApiKey=e00b18bef21a4f6386e755911dd8f94f&ApiST=1587369825&ApiSign=9a7ad116dc832b337302a5c57fb713d8">
+                <img src="images/menu-xi.png" class="icon-small">
+                <span class="menu-name">洗车</span>
+            </a>
+            <a class="menu-item"
+                href="https://m.chediandian.com/maintenance-v2/index?ApiKey=e00b18bef21a4f6386e755911dd8f94f&ApiST=1587369825&ApiSign=9a7ad116dc832b337302a5c57fb713d8">
+                <img src="images/menu-bao.png" class="icon-small">
+                <span class="menu-name">正品保养</span>
+            </a>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="addition">
+        <div class="title">祥卡特权</div>
+        <div class="addition-list">
+            <!-- <div class="addition-item" style="padding-top: 0;">
+                <a href="https://songzhaopian.com/?channel=gzyldxt-sjk" class="reward addition-menu">
+                    <span class="addition-name">免费领</span>
+                    <span class="addition-tip">定制手机壳</span>
+                </a>
+            </div> -->
+            <!-- <div class="addition-item">
+                <a href="https://shop42992213.youzan.com/v2/ump/promocard/fetch?alias=m7dw9uza" class="cupon addition-menu">
+                    <span class="addition-name">领券</span>
+                    <span class="addition-tip">价值500元</span>
+                </a>
+            </div> -->
+            <div class="addition-item">
+                <a href="https://m-dop.daojia.com/djlian/index?taskid=57440946F8804DF17B98BFE8B0F00C00"
+                    class="jia addition-menu">
+                    <span class="addition-name">到家服务</span>
+                    <span class="addition-tip">超值福利</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function toService() {
+        window.location.href = 'service.html?phone=' + phone;
+    }
+    function toPlay() {
+        let id = 726 + parseInt(type);
+        if (type == 0) id += 2;
+        window.location.href = 'http://tq.jfshou.cn/seller/sellCard?agentId=' + id;
+    }
+    var domain = 'http://ykt.di-yun.com:3000';
+    function toWeizhang() {
+        window.location.href = domain + '/ticket?phone=' + phone;
+    }
+
+    // 轮播图
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal', // 垂直切换选项
+        loop: true, // 循环模式选项
+        autoplay: true,//可选选项，自动滑动
+    })
+</script>
+
+</html>

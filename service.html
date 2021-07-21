@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>车主服务</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/service.css">
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/resize.js"></script>
+<script type="text/javascript">
+ function getQueryValue(queryName) {
+    var query = decodeURI(window.location.search.substring(1));
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == queryName) { return pair[1]; }
+    }
+    return null;
+ }
+var phone = getQueryValue('phone');
+var type = getQueryValue('type');
+var date = getQueryValue('date');
+
+
+</script>
+</head>
+
+<body>
+    <h5 class="title">车主服务</h5>
+    <div class="service-list">
+        <div class="service-row">
+            <div class="service-item">
+                <a href="#" class="service-btn" onclick="toWeizhang()">
+                    <i class="service-icon icon-wei"></i>
+                    <span>违章查询</span>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="https://m.chediandian.com/maintenance-v2/index?ApiKey=e00b18bef21a4f6386e755911dd8f94f&ApiST=1587369825&ApiSign=9a7ad116dc832b337302a5c57fb713d8" class="service-btn">
+                    <i class="service-icon icon-bao"></i>
+                    <span>保养优惠</span>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="https://m.cheduo.com/cdz/index?source=h5-gaosu" class="service-btn">
+                    <i class="service-icon icon-chong"></i>
+                    <span>充电桩查询</span>
+                </a>
+            </div>
+        </div>
+        <div class="service-row">
+            <div class="service-item">
+                <a href="http://l.zuzuche.com/MwjHHv" class="service-btn">
+                    <i class="service-icon icon-jia"></i>
+                    <span>驾照升级</span>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="https://etc.cyzl.com/wetc/etc_plus/index.html#/?serverInfoId=702878431156772864" class="service-btn">
+                    <i class="service-icon icon-etc"></i>
+                    <span>ETC办理</span>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="https://cardmore.cn/wap/myshops/index.html?levelone=402" class="service-btn">
+                    <i class="service-icon icon-debt"></i>
+                    <span>车主信用卡</span>
+                </a>
+            </div>
+        </div>
+        <div class="service-row">
+            <div class="service-item">
+                <a href="https://auto.chediandian.com/platinum/car-check/index?ApiKey=e00b18bef21a4f6386e755911dd8f94f&ApiST=1587369825&ApiSign=9a7ad116dc832b337302a5c57fb713d8" class="service-btn">
+                    <i class="service-icon icon-jian"></i>
+                    <span>车检代办</span>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="https://auto.chediandian.com/rescue/userrescue/index?ApiKey=e00b18bef21a4f6386e755911dd8f94f&ApiST=1587369825&ApiSign=9a7ad116dc832b337302a5c57fb713d8" class="service-btn">
+                    <i class="service-icon icon-yuan"></i>
+                    <span>应急救援</span>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="https://s-yinuoche.zuzuche.com/m/index/index?channel_hash=061da0dc6dee5d043f713c187341a089" class="service-btn">
+                    <i class="service-icon icon-nuo"></i>
+                    <span>免费挪车码</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="addition-title">尊享优惠</div>
+    <div class="addition-list">
+        <div class="addition-item">
+            <a href="https://open.chediandian.com/wash/ent-list/index?ApiKey=e00b18bef21a4f6386e755911dd8f94f&ApiST=1587369825&ApiSign=9a7ad116dc832b337302a5c57fb713d8" class="xiche addition-menu">
+                <span class="addition-name">洗车</span>
+                <span class="addition-tip">最低五折起</span>
+            </a>
+        </div>
+        <div class="addition-item">
+            <a href="https://static.am.xiaojukeji.com/cf-terminal/oil/thanos-fe-oil/pages/home/index.html?am_channel=190001&openKey=outer" class="jiayou addition-menu">
+                <span class="addition-name">加油</span>
+                <span class="addition-tip">最低九折起</span>
+            </a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    // var domain = 'http://localhost:3000';
+    // var domain = 'http://182.92.125.163:9000';
+    var domain = 'http://182.92.125.163:3000';
+function toWeizhang() {
+    window.location.href = domain + '/ticket?phone='+phone;
+}
+</script>
+</html>

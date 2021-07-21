@@ -1,0 +1,114 @@
+body {
+    font-size: .14rem;
+    color: #333;
+}
+.divider {
+    background: #F6F6F6;
+    width: 100%;
+    height: .1rem;
+}
+.title {
+    font-size: .18rem;
+    font-weight: bold;
+    padding: .06rem 0 .14rem .2rem;
+}
+.service-list {
+    border-top: 1px solid #e1e1e1;
+}
+.service-row {
+    display: flex;
+    border-bottom: 1px solid #e1e1e1;
+}
+.service-row:last-child {
+    border-bottom: none;
+}
+.service-item {
+    flex: 1;
+    border-right: 1px solid #e1e1e1;
+    font-size: .12rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: .9rem;
+    padding-bottom: .15rem;
+    justify-content: flex-end;
+}
+.service-item:last-child {
+    border-right: none;
+}
+.service-btn {
+    display: block;
+}
+.service-icon {
+    display: block;
+    margin: 0 auto .08rem;
+    width: .34rem;
+    height: .34rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.icon-wei {
+    background-image: url(../images/icon-wei.png);
+}
+.icon-bao {
+    background-image: url(../images/icon-bao.png);
+}
+.icon-chong {
+    background-image: url(../images/icon-chong.png);
+}
+.icon-jia {
+    background-image: url(../images/icon-jia.png);
+}
+.icon-etc {
+    background-image: url(../images/icon-etc.png);
+}
+.icon-debt {
+    background-image: url(../images/icon-debt.png);
+}
+.icon-jian {
+    background-image: url(../images/icon-jian.png);
+}
+.icon-yuan {
+    background-image: url(../images/icon-yuan.png);
+}
+.icon-nuo {
+    background-image: url(../images/icon-nuo.png);
+}
+.addition-title {
+    margin: .15rem 0 .3rem .2rem;
+    font-size: .16rem;
+    font-weight: bold;
+}
+.addition-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .2rem;
+}
+.addition-item {
+    width: 1.6rem;
+    height: .65rem;
+    box-shadow: 0 4px 20px 0 rgba(244,174,109,0.10);
+    border-radius: 8px;
+    padding: .13rem 0 .12rem .14rem;
+}
+.addition-menu {
+    display: block;
+    padding-left: .48rem;
+    height: .4rem;
+    background-size: .4rem;
+    background-repeat: no-repeat;
+}
+.xiche {
+    background-image: url(../images/icon-xi.png);
+}
+.jiayou {
+    background-image: url(../images/icon-oil.png);
+    background-size: .36rem;
+}
+.addition-tip {
+    display: block;
+    font-size: .12rem;
+    color: #908D8D;
+    margin-top: .02rem;
+}
