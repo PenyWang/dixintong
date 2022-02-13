@@ -103,13 +103,19 @@ body {
 }
 .reward {
     background-image: url(../images/yinge.JPG);
-    background-size: .6rem;
+    background-size: 0.45rem;
+    background-position-y: -5px;
 }
 .cupon {
     background-image: url(../images/icon-cupon.png);
 }
 .huanxi {
     background-image: url(../images/menu-huanxi.png);
+}
+.baobao {
+    background-image: url(../images/menu-baobao.png);
+    background-size: 0.5rem;
+    background-position-y: -5px;
 }
 .addition-tip {
     display: block;
